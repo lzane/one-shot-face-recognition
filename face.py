@@ -1,6 +1,7 @@
 import dlib
 import face_recognition
 import face_recognition_models
+import time
 
 # HOG face detector using the built-in dlib class
 FACE_DETECTOR = dlib.get_frontal_face_detector()
@@ -46,7 +47,6 @@ def detect_faces_and_crop(image, upsample_num_times=1):
 def _detect_face_landmarks(image, face_rect):
     return FACE_POSE_PREDICTOR(image, face_rect)
 
-
 def detect_face_landmarks(image, face_rect=None):
     """
     detect face landmarks,
@@ -65,6 +65,11 @@ def _encode_face(image, detect_marks):
 
 
 def encode_face(image, detect_marks=None):
+    """
+    encode face into 128 dims vector with image as input
+        :param image: 
+        :param detect_marks=None: 
+    """
     if(detect_marks == None):
         detect_marks = detect_face_landmarks(image)
     return _encode_face(image, detect_marks)
@@ -77,10 +82,11 @@ def detect_face_and_encode(image):
     landmarked_faces = []
     for face in croped_faces:
         landmarks = detect_face_landmarks(face)
-        encode = encode_face(image, landmarks)
+        encode = encode_face(face, landmarks)
         landmarked_faces.append(landmarks)
         encoded_faces.append(encode)
     return {'detected_faces': detected_faces,
             'croped_faces': croped_faces,
             'encoded_faces': encoded_faces,
-            'landmarked_faces': landmarked_faces}
+            'landmarked_faces': landmarked_faces,
+            'image': image}
