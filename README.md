@@ -41,3 +41,7 @@ SSPP的情况其实很普遍，例如在**身份证，护照，校园卡**等等
 
 [^arXiv]: [Sungeun Hong, Woobin Im, Jongbin Ryu, Hyun S. Yang, SSPP-DAN: DEEP DOMAIN ADAPTATION NETWORK FOR FACE RECOGNITION WITH SINGLE SAMPLE PER PERSO, *arXiv:1702.04069*](https://arxiv.org/abs/1702.04069)
 
+https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/
+
+https://www.pyimagesearch.com/2017/05/22/face-alignment-with-opencv-and-python/
+

@@ -2,13 +2,17 @@ import dlib
 import face_recognition
 import face_recognition_models
 import time
+import os
+
+this_file_dir, _ = os.path.split(__file__)
+landmarks_file_dir = os.path.join(this_file_dir,'shape_predictor_68_face_landmarks.dat')
 
 # HOG face detector using the built-in dlib class
 FACE_DETECTOR = dlib.get_frontal_face_detector()
 
 # download the required pre-trained face detection model here:
 # http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
-PREDICTOR_MODEL = "shape_predictor_68_face_landmarks.dat"
+PREDICTOR_MODEL = landmarks_file_dir
 FACE_POSE_PREDICTOR = dlib.shape_predictor(PREDICTOR_MODEL)
 
 FACE_RECOGNITION_MODEL = face_recognition_models.face_recognition_model_location()
@@ -46,6 +50,7 @@ def detect_faces_and_crop(image, upsample_num_times=1):
 
 def _detect_face_landmarks(image, face_rect):
     return FACE_POSE_PREDICTOR(image, face_rect)
+
 
 def detect_face_landmarks(image, face_rect=None):
     """
