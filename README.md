@@ -1,5 +1,6 @@
-> 仍在开发学习，任不可用
-> Still unavailable
+> deprecated, but you can glance at [`recognition process.ipynb`](https://github.com/lzane/one-shot-face-recognition/blob/master/recognition%20process.ipynb) and [`real_time_webcam`](https://github.com/lzane/one-shot-face-recognition/blob/master/src/real_time_webcam.py) to briefly understand the process.
+
+> 已弃用，但可以参考[`recognition process.ipynb`](https://github.com/lzane/one-shot-face-recognition/blob/master/recognition%20process.ipynb) 和 [`real_time_webcam`](https://github.com/lzane/one-shot-face-recognition/blob/master/src/real_time_webcam.py) 大概了解整个过程。
 
 # 样本不足条件下的人脸识别问题
 
